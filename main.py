@@ -1,16 +1,18 @@
-emoji = {
-    ":(" : "🥹",
-    ":)" : "😀"
-}
-
-
-while True:
-    enter = input("> ")
-    icon = enter.split(" ")
+def emoji_converter(enter):
+    words = enter.split(" ")
+    emoji = {
+        ":(": "🥹",
+        ":)": "😀"
+    }
     emotion = ""
-
-    for word in icon:
+    for word in words:
         emotion += emoji.get(word, word) + " "
+    return emotion
 
-    print(emotion.strip())
-    break
+
+enter = input("> ")
+print(emoji_converter(enter))
+
+
+
+
